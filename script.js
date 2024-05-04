@@ -1,3 +1,9 @@
+function backToIntro() {
+    if (confirm("Are you sure you want to go back to the intro page?")) {
+        window.location.href = "index.html";
+    }
+}
+
 function getSelectedQuestionTypes() {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.getAll('questionType');
@@ -7,13 +13,6 @@ function getQuestionCount() {
     const urlParams = new URLSearchParams(window.location.search);
     return parseInt(urlParams.get('questionCount')) || 10;
 }
-
-function backToIntro() {
-    if (confirm("Are you sure you want to go back to the intro page?")) {
-        window.location.href = "index.html";
-    }
-}
-
 
 let currentScore = 0;
 let currentQuestionIndex = 0;
@@ -264,7 +263,8 @@ function resetAnswers() {
 }
 
 function finishQuiz() {
-    document.getElementById('quiz-container').innerHTML = `Quiz completed! Your score: ${currentScore} out of ${questions.length}`;
+    let percent = Math.round(currentScore/questions.length * 100);
+    document.getElementById('quiz-container').innerHTML = `Quiz completed! Your score: ${currentScore} out of ${questions.length} (${percent}%)`;
 }
 
 window.onload = function() {
