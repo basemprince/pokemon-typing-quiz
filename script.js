@@ -10,7 +10,7 @@ function getQuestionCount() {
 
 function backToIntro() {
     if (confirm("Are you sure you want to go back to the intro page?")) {
-        window.location.href = "intro.html";
+        window.location.href = "index.html";
     }
 }
 

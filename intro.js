@@ -5,5 +5,5 @@ document.getElementById('intro-form').onsubmit = function(event) {
     const selectedTypes = [...document.querySelectorAll('input[name="questionType"]:checked')].map(cb => cb.value);
     const selectedTypesQuery = selectedTypes.map(type => `questionType=${encodeURIComponent(type)}`).join('&');
 
-    window.location.href = `index.html?questionCount=${questionCount}&${selectedTypesQuery}`;
+    window.location.href = `quiz.html?questionCount=${questionCount}&${selectedTypesQuery}`;
 };
