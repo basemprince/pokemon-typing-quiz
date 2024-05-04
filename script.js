@@ -1,5 +1,25 @@
+function getSelectedQuestionTypes() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.getAll('questionType');
+}
+
+function getQuestionCount() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return parseInt(urlParams.get('questionCount')) || 10;
+}
+
+function backToIntro() {
+    if (confirm("Are you sure you want to go back to the intro page?")) {
+        window.location.href = "intro.html";
+    }
+}
+
+
 let currentScore = 0;
 let currentQuestionIndex = 0;
+const questionCount = getQuestionCount();
+const selectedQuestionTypes = getSelectedQuestionTypes();
+
 const typeChart = {
     "Normal": {
         "Strong Against": [],
@@ -129,24 +149,25 @@ const typeChart = {
     }
 };
 
-const questions = generateQuestions();
+const questions = generateQuestions().slice(0, questionCount);
 
 function generateQuestions() {
     let questions = [];
-    const typeCategories = ["Strong Against", "Weak Against", "Resistant To", "Vulnerable To"];
+    const typeCategories = selectedQuestionTypes.length ? selectedQuestionTypes : ["Strong Against", "Weak Against", "Resistant To", "Vulnerable To"];
 
     Object.keys(typeChart).forEach(type => {
         shuffleArray(typeCategories);
         typeCategories.forEach(category => {
+            if (typeChart[type][category].length > 0) {
                 questions.push({
                     question: `What is ${type} type ${category.toLowerCase()}?`,
                     answers: typeChart[type][category],
                     type: type
                 });
             }
-        );
+        });
     });
-    // Shuffle the questions to randomize order
+
     shuffleArray(questions);
     return questions;
 }

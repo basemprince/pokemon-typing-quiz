@@ -7,14 +7,16 @@
     <title>Pokémon Type Quiz</title>
 </head>
 <body>
+    <button id="back-to-intro" onclick="backToIntro()">Back to Intro</button>
+
     <div id="quiz-container">
         <div id="questionProgress"></div>
         <div id="question"></div>
         <div id="answers"></div>
         <button id="submit" onclick="checkAnswers()">Submit Answers</button>
         <button id="next" onclick="nextQuestion()" style="display:none;">Next Question</button>
-
     </div>
+
     <div id="info-sidebar">
         <h3>Type Categories Explained</h3>
         <ul>
@@ -24,7 +26,7 @@
             <li><strong>Vulnerable To:</strong> The current type is weak against attacks from these types.</li>
         </ul>
     </div>
-    
+
     <div id="score"></div>
     <script src="script.js"></script>
 </body>

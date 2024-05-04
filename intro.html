@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet"/>
+    <title>Pokémon Type Quiz</title>
+</head>
+<body>
+    <div id="intro-container">
+        <h1>Welcome to the Pokémon Type Quiz</h1>
+        <form id="intro-form" action="index.html">
+            <label for="questionCount">Choose the number of questions (up to 72):</label>
+            <input type="number" id="questionCount" name="questionCount" min="1" max="72" value="10">
+
+            <p>Choose the types of questions:</p>
+            <label>
+                <input type="checkbox" name="questionType" value="Strong Against" checked>
+                Strong Against
+            </label>
+            <label>
+                <input type="checkbox" name="questionType" value="Weak Against" checked>
+                Weak Against
+            </label>
+            <label>
+                <input type="checkbox" name="questionType" value="Resistant To" checked>
+                Resistant To
+            </label>
+            <label>
+                <input type="checkbox" name="questionType" value="Vulnerable To" checked>
+                Vulnerable To
+            </label>
+
+            <button type="submit">Start Quiz</button>
+        </form>
+    </div>
+    <script src="intro.js"></script>
+</body>
+</html>

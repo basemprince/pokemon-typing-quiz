@@ -206,3 +206,29 @@ button:hover {
     color: #3a3a3a;
     margin-bottom: 15px;
 }
+
+#intro-container {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+#back-to-intro {
+    position: absolute; 
+    top: 10px; 
+    left: 10px; 
+    padding: 10px 20px; 
+    background-color: #007BFF;
+    color: white; 
+    border: none; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#back-to-intro:hover {
+    background-color: #0056b3; 
+}
