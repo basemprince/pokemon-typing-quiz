@@ -1,6 +1,6 @@
 # Pokémon Type Quiz
 
-A web-based Pokémon Type Quiz that allows users to test their knowledge of Pokémon types. The quiz includes an intro page where users can select the number and type of questions they want to answer. [link to the page](www.basemshaker.com/pokemon-typing-quiz/)
+A web-based Pokémon Type Quiz that allows users to test their knowledge of Pokémon types. The quiz includes an intro page where users can select the number and type of questions they want to answer. [link to the page](https://www.basemshaker.com/pokemon-typing-quiz/)
 
 ## Features
 
